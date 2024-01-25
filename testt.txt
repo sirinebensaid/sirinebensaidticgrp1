@@ -1,0 +1,58 @@
+public class Main{
+    public static void main(String[] args){
+        Groupe g1=new Groupe("Tic-G1");
+        System.out.println(g1);
+}
+}
+class Note {
+    String mat;
+
+    public Note(String mat, double note, double coef) {
+        this.mat = mat;
+        this.note = note;
+        this.coef = coef;
+    }
+
+    double note;
+    double coef;
+}
+class Etudiant {
+    int id;
+    String nom, email;
+    Note[] notes;
+
+    public Etudiant(int id, String nom, String email) {
+        this.id = id;
+        this.nom = nom;
+        this.email = email;
+        this.notes = new Note[10];
+    }
+
+
+    public String toString() {
+        String str ="";
+        str += notes[0].toString();
+        str += notes[1].toString();
+        str += notes[2].toString();
+        str += notes[3].toString();
+        str += notes[4].toString();
+        str += notes[5].toString();
+        str += notes[6].toString();
+        str += notes[7].toString();
+        str += notes[8].toString();
+        str += notes[9].toString();
+        return "id=" + id + "nom=" + nom + "Liste des notes" + str;
+    }
+}
+class Groupe {
+    String nom;
+    Etudiant[] list_etuds;
+
+    Groupe(String nom) {
+        this.nom = nom;
+        list_etuds = new Etudiant[20];
+    }
+    public String toString(){
+        return"nom="+nom;
+    }
+    }
